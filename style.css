@@ -1,0 +1,273 @@
+* {
+     box-sizing: border-box;
+     margin: 0;
+}
+ 
+body {
+     font-family: "Nunito Sans", serif;
+     background: url(a1_bg.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+ 
+.container {
+     width: 1050px;
+     height: 1050px;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     flex-wrap: wrap;
+     /* border: 2px solid red; */
+     gap: 10px;
+}
+ 
+.card {
+     width: 500px;
+     height: 500px;
+     /* border: 2px solid rgb(0, 68, 255); */
+     position: relative;
+     overflow: hidden;
+}
+ 
+.card:nth-child(1) img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+ 
+ /* 2k NBA card layers */
+.nba_1 {
+     z-index: 1;
+     transform: scale(0.8);
+}
+.nba_2 {
+     z-index: -1;
+     transform: scale(0.001);
+}
+.nba_3 {
+     z-index: 3;
+     transform: translateY(150px) scale(0.001);
+     opacity:0;
+}
+.nba_4 {
+     z-index: 2;
+     transform: translateY(100px) scale(0.001);
+     opacity:0;
+}
+  /* 2k Card hover anim */
+.card:nth-child(1):hover .nba_1 {
+     transform: scale(1);
+     transition-delay: 0.1s;
+}
+ 
+.card:nth-child(1):hover .nba_2 {
+     transform: scale(1);
+     transition-delay: 0.2s;
+}
+ 
+.card:nth-child(1):hover .nba_3 {
+     opacity: 100;
+     transform: scale(1);
+     transition-delay: 0.35s;
+}
+ 
+.card:nth-child(1):hover .nba_4 {
+     transform: scale(1);
+     opacity: 100;
+     transition-delay: 0.55s;
+}
+/* Pikachu card layers */
+
+.card:nth-child(2) img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.pika_back {
+     z-index: -1;
+     transform: scale(0.001)
+}
+.pika_1 {
+     z-index: 2;
+     transform: scale(0.7);
+}
+.pika_2 {
+     z-index: 3;
+     opacity: 0;
+     transform: scale(0.7);
+}
+.pika_3 {
+     z-index: 1;
+     transform: translateY(160px) scale(0.78);
+
+}
+.card:nth-child(2) {
+     transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+/* pika card hover anim */
+.card:nth-child(2):hover {
+     transition-delay: 0.1s;
+     transform: rotate(-4deg);
+}
+.card:nth-child(2):hover .pika_back {
+     transform: translateX(90px) rotate(15deg) scale(0.65);
+     transition-delay: 0.3s;
+}
+.card:nth-child(2):hover .pika_1 {
+     transform: translateX(-40px) scale(0.85);
+     transition-delay: 0.1s;
+}
+.card:nth-child(2):hover .pika_2 {
+     transform: translateX(-40px) scale(0.85);
+     opacity: 100;
+     transition-delay: 0.1s;
+}
+.card:nth-child(2):hover .pika_3 {
+     transform: translateX(-40px) scale(0.85);
+     transition-delay: 0.15s;
+}
+/* Yugi card layers */
+
+.card:nth-child(3) img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.yugi_base {
+     z-index: 1;
+     transform: scale(0.7);
+}
+.yugi_desc {
+     z-index: 2;
+     transform: translateY(130px) scale(0.001);
+     opacity: 0;
+}
+.yugi_descText {
+     z-index: 3;
+     transform: translateY(130px) scale(0.001);
+     opacity: 0;
+
+}
+.yugi_img, .yugi_stars, .yugi_title {
+     z-index: 2;
+}
+.yugi_img {
+     transform: translateY(-25px) scale(0.001);
+     opacity: 0;
+}
+.yugi_stars {
+     transform: translateX(40px) translateY(-130px) scale(0.001);
+     opacity: 0;
+}
+.yugi_title {  
+     transform: translateY(-155px) scale(0.001);
+     opacity: 0;
+}
+/* Yugi card anim */
+.card:nth-child(3):hover .yugi_base {
+     transform: scale(0.87);
+     transition-delay: 0.05s;
+}
+.card:nth-child(3):hover .yugi_desc {
+     transform: translateY(147px) scale(0.542);
+     opacity: 100;
+     transition-delay: 0.2s;
+}
+.card:nth-child(3):hover .yugi_descText {
+     transform: translateY(147px) scale(0.542);
+     opacity: 100;
+     transition-delay: 0.2s;
+}
+.card:nth-child(3):hover .yugi_img {
+     transform: translateY(-25px) scale(0.49);
+     opacity: 100;
+     transition-delay: 0.3s;
+}
+.card:nth-child(3):hover .yugi_stars {
+     transform: translateX(40px) translateY(-158px) scale(0.30);
+     opacity: 100;
+     transition-delay: 0.4s;
+}
+.card:nth-child(3):hover .yugi_title {
+     transform: translateY(-185px) scale(0.52);
+     opacity: 100;
+     transition-delay: 0.5s;   
+}
+/* Playing cards */
+
+.card:nth-child(4) img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card1 {
+     z-index: 1;
+     transform: translateY(60px) scale(0.3);
+}
+.card2 {
+     z-index: -1;
+     transform: translateY(60px) scale(0.3);
+}
+.card3 {
+     z-index: -2;
+     transform: translateY(60px) scale(0.3);
+}
+.card4 {
+     z-index: -3;
+     transform: translateY(60px) scale(0.3);
+}
+.card5 {
+     z-index: -4;
+     transform: translateY(60px) scale(0.3);
+}
+
+/* Playing card anims */
+.card:nth-child(4):hover .card1 {
+     transform: translateX(120px) rotate(20deg) scale(0.5);
+}
+.card:nth-child(4):hover .card2 {
+     transform: translateX(60px) translateY(-20px) rotate(5deg) scale(0.505);
+     transition-delay: 0.15s;
+}
+.card:nth-child(4):hover .card3 {
+     transform: translateX(0px) translateY(-30px) rotate(-4deg) scale(0.5);
+     transition-delay: 0.2s;
+}
+.card:nth-child(4):hover .card4 {
+     transform: translateX(-70px) translateY(-15px) rotate(-12deg) scale(0.51);
+     transition-delay: 0.25s;
+}
+.card:nth-child(4):hover .card5 {
+     transform: translateX(-115px) translateY(-5px) rotate(-25deg) scale(0.48);
+     transition-delay: 0.30s;
+}
+
+
+
+
+
+
